@@ -1,30 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-int tamanho = 0;
-int *idades = ((int*)calloc(idades, sizeof(int)));
+int main() {
+    int tamanho = 0;
+    int *idades = NULL;
 
-printf("Quantas idades? ");
- scanf("%d", &tamanho);
+    printf("Quantas idades? ");
+    scanf("%d", &tamanho);
 
- if (idades == NULL) {
- printf("Sem mem�ria!\n");
- return 1;
- }
+    // Verifica se o tamanho é válido
+    if (tamanho <= 0) {
+        printf("Tamanho invalido!\n");
+        return 1;
+    }
 
- for (int i = 0; i < tamanho; i++) {
- printf("Idade %d: ", i+1);
- scanf("%d", &idades[i]);
- }
+    // Aloca a memória corretamente
+    idades = (int*) calloc(tamanho, sizeof(int));
 
+    if (idades == NULL) {
+        printf("Sem memoria!\n");
+        return 1;
+    }
 
- printf("Voce digitou: ");
- for (int i = 0; i < tamanho; i++) {
- printf("%d ", idades[i]);
- }
+    for (int i = 0; i < tamanho; i++) {
+        printf("Idade %d: ", i + 1);
+        scanf("%d", &idades[i]);
+    }
 
- free(idades);
- idades = NULL;
-return 0;
+    printf("Voce digitou: ");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", idades[i]);
+    }
+    printf("\n");
+
+    free(idades);
+    idades = NULL;
+
+    return 0;
 }

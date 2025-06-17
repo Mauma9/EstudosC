@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "d:/Programas estudo",
-      "program": "d:/Programas estudo/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/run/media/mauricio/B4DE0BCDDE0B86B8/Estudos_Programacao/EstudosC/dia12",
+      "program": "/run/media/mauricio/B4DE0BCDDE0B86B8/Estudos_Programacao/EstudosC/dia12/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
