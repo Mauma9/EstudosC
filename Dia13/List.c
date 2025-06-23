@@ -7,7 +7,7 @@
 typedef struct No
 {
     int dado;
-    struct No *proximo
+    struct No *proximo;
 } No;
 
 // defnição da lista com nome cabeça
@@ -22,7 +22,7 @@ typedef struct Lista
 
 Lista *criarLista()
 {
-    Lista *lista = (Lista *)malloc(sizeo(Lista));
+    Lista *lista = (Lista *)malloc(sizeof(lista));
     if (lista == NULL)
     {
         printf("erro");
@@ -38,7 +38,7 @@ Lista *criarLista()
 
     lista->cabeca->dado = 0;
     lista->cabeca->proximo = NULL;
-    lesta->tamanho = 0;
+    lista->tamanho = 0;
     return lista;
 }
 
@@ -79,7 +79,7 @@ void inserirFinal(Lista *lista, int valor)
     }
     // adici
     novoNo->dado = valor;
-    NovoNo->proximo = NULL;
+    novoNo->proximo = NULL;
     // percorrer até o fim do nó
     No *atual = lista->cabeca;
     while (atual->proximo != NULL)
@@ -95,7 +95,7 @@ No *buscar(Lista *lista, int valor)
     if (lista == NULL)
     {
         printf("erro");
-        return;
+        return NULL;
     }
     No *atual = lista->cabeca->proximo;
     while (atual != NULL)
@@ -113,7 +113,7 @@ int remover(Lista *lista, int valor)
     if (lista == NULL)
     {
         printf("erro");
-        return;
+        return 1;
     }
 
     // começar da cabeça para encontrar o nó anterior ao que sera removido
